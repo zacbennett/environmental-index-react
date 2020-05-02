@@ -1,11 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Header from './Header.jsx';
-import Routing from './Routing.jsx';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import About from './About.jsx';
-import Home from './Home.jsx';
+import About from './containers/About.jsx';
+import Home from './containers/Home.jsx';
+import Form from './containers/Form.jsx';
 import './style.css';
 
 function App() {
@@ -21,14 +18,20 @@ function App() {
               <li>
                 <Link to="/about">About</Link>
               </li>
+              <li>
+                <Link to="/form">Form</Link>
+              </li>
             </ul>
           </header>
           <Switch>
-            <Route path="/about">
+            <Route exact path="/about">
               <About />
             </Route>
-            <Route path="/">
+            <Route exact path="/">
               <Home />
+            </Route>
+            <Route exact path="/form">
+              <Form />
             </Route>
           </Switch>
         </div>
